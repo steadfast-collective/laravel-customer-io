@@ -31,10 +31,9 @@ trait SyncsToCustomerIo
     }
 
     /**
-     *
      * @return string
      */
-    public function getCustomerIoIdAttribute() : string
+    public function getCustomerIoIdAttribute(): string
     {
         $model = Str::of(get_class($this))
             ->afterLast('\\')
@@ -48,7 +47,7 @@ trait SyncsToCustomerIo
      *
      * @return array
      */
-    public function toCustomerIoArray() : array
+    public function toCustomerIoArray(): array
     {
         return array_replace($this->attributesToArray(), [
             'created_at' => $this->created_at->timestamp,
@@ -61,7 +60,7 @@ trait SyncsToCustomerIo
      *
      * @return array
      */
-    public function getCustomerIoData() : array
+    public function getCustomerIoData(): array
     {
         return array_merge([
             'app_environment' => App::environment(),
