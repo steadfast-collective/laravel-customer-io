@@ -19,18 +19,12 @@ class RemoveModelFromCustomerIo implements ShouldQueue
     private $model;
 
     /**
-     * @var CustomerIoClient
-     */
-    private $customerIo;
-
-    /**
      * Create a new job instance.
      *
      * @return void
      */
     public function __construct(Model $model)
     {
-        $this->customerIo = resolve('Customerio\Client');
         $this->model = $model;
     }
 
@@ -41,11 +35,11 @@ class RemoveModelFromCustomerIo implements ShouldQueue
      */
     public function handle()
     {
-        if (! config('services.customer_io.enabled')) {
+        if (! config('laravel-customer-io.enabled')) {
             return;
         }
 
-        $this->customerIo->customers->delete([
+        resolve('Customerio\Client')->customers->delete([
             'id' => $this->model->customer_io_id,
         ]);
     }

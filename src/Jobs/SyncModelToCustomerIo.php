@@ -19,18 +19,12 @@ class SyncModelToCustomerIo implements ShouldQueue
     private $model;
 
     /**
-     * @var CustomerIoClient
-     */
-    private $customerIo;
-
-    /**
      * Create a new job instance.
      *
      * @return void
      */
     public function __construct(Model $model)
     {
-        $this->customerIo = resolve('Customerio\Client');
         $this->model = $model;
     }
 
@@ -41,10 +35,10 @@ class SyncModelToCustomerIo implements ShouldQueue
      */
     public function handle()
     {
-        if (! config('services.customer_io.enabled')) {
+        if (! config('laravel-customer-io.enabled')) {
             return;
         }
 
-        $this->customerIo->customers->update($this->model->getCustomerIoData());
+        resolve('Customerio\Client')->customers->update($this->model->getCustomerIoData());
     }
 }

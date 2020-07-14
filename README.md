@@ -20,16 +20,12 @@ composer require steadfastcollective/laravel-customer-io
 ```
 
 ## Setting up the Customer io service
-You will need to create a Customer io account to use this channel. Within your account, you will find the API key and the site ID. Place them inside your .env file. To load them, add this to your config/services.php file:
+You will need to create a Customer io account to use this channel. Within your account, you will find the API key and the site ID. Place them inside your .env file:
 
-``` php
-...
-'customer_io' => [
-    'enabled' => env('CUSTOMER_IO_ENABLED', true),
-    'site_id' => env('CUSTOMER_IO_SITE_ID'),
-    'api_key' => env('CUSTOMER_IO_API_KEY'),
-],
-...
+```
+CUSTOMER_IO_ENABLED=true
+CUSTOMER_IO_SITE_ID=[SITE_ID]
+CUSTOMER_IO_API_KEY=[API_KEY]
 ```
 
 This will load the Twitter app data from the .env file. Make sure to use the same keys you have used there.
