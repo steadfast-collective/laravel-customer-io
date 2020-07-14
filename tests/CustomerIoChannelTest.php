@@ -19,7 +19,7 @@ class CustomerIoChannelTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        
+
         $this->customerIo = Mockery::mock(CustomerIoClient::class);
         $this->channel = new CustomerIoChannel($this->customerIo);
     }
@@ -49,7 +49,6 @@ class CustomerIoChannelTest extends TestCase
     }
 }
 
-
 class TestNotifiable
 {
     use \Illuminate\Notifications\Notifiable;
@@ -62,7 +61,6 @@ class TestNotifiable
         return false;
     }
 }
-
 
 class TestNotification extends Notification
 {
