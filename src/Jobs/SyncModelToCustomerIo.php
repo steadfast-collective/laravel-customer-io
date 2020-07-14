@@ -28,9 +28,9 @@ class SyncModelToCustomerIo implements ShouldQueue
      *
      * @return void
      */
-    public function __construct(CustomerIoClient $customerIo, Model $model)
+    public function __construct(Model $model)
     {
-        $this->customerIo = $customerIo;
+        $this->customerIo = resolve('Customerio\Client');
         $this->model = $model;
     }
 

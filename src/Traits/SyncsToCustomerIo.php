@@ -70,7 +70,7 @@ trait SyncsToCustomerIo
             'model_class'     => $this->getMorphClass(),
             'model_id'        => $this->id,
             '_timestamp'      => now()->timestamp,
-        ], $this->toCustomerIoArray);
+        ], $this->toCustomerIoArray());
     }
 
     public function syncToCustomerIo()
