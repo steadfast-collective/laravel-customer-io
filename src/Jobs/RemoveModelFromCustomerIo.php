@@ -2,7 +2,6 @@
 
 namespace Steadfastcollective\LaravelCustomerIo\Jobs;
 
-use Customerio\Client as CustomerIoClient;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Database\Eloquent\Model;
