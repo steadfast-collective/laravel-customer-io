@@ -1,4 +1,4 @@
-# Very short description of the package
+# Customer io notification channel for Laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/steadfastcollective/laravel-customer-io.svg?style=flat-square)](https://packagist.org/packages/steadfastcollective/laravel-customer-io)
 [![Build Status](https://img.shields.io/travis/steadfastcollective/laravel-customer-io/master.svg?style=flat-square)](https://travis-ci.org/steadfastcollective/laravel-customer-io)
@@ -17,14 +17,62 @@ composer require steadfastcollective/laravel-customer-io
 
 ## Usage
 
+Env variables:
 ``` php
-// Usage description here
+CUSTOMER_IO_ENABLED
+CUSTOMER_IO_SITE_ID
+CUSTOMER_IO_API_KEY
+```
+
+Add the trait to your notifiable model:
+``` php
+use Steadfastcollective\LaravelCustomerIo\Traits\SyncsToCustomerIo;
+
+class User extends Authenticatable
+{
+    use Notifiable, SyncsToCustomerIo;
+    
+    // ...
+}
+
+```
+Adding customer io support to the notification class:
+``` php
+use Steadfastcollective\LaravelCustomerIo\Channels\CustomerIoChannel;
+```
+``` php
+    /**
+     * Get the notification's delivery channels.
+     *
+     * @param  mixed  $notifiable
+     * @return array
+     */
+    public function via($notifiable)
+    {
+        return [
+            CustomerIoChannel::class,
+        ];
+    }
+
+    /**
+     * Get the customer io representation of the notification.
+     *
+     * @param  mixed  $notifiable
+     * @return array
+     */
+    public function toCustomerIo($notifiable)
+    {
+        return [
+            // ...
+        ];
+    }
+}
 ```
 
 ### Testing
 
-``` bash
-composer test
+``` php
+// TODO
 ```
 
 ### Changelog
@@ -47,7 +95,3 @@ If you discover any security related issues, please email andre@steadfastcollect
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).

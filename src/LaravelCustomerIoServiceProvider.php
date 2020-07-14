@@ -3,6 +3,7 @@
 namespace Steadfastcollective\LaravelCustomerIo;
 
 use Illuminate\Support\ServiceProvider;
+use Customerio\Client as CustomerIoClient;
 
 class LaravelCustomerIoServiceProvider extends ServiceProvider
 {
@@ -21,7 +22,7 @@ class LaravelCustomerIoServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('laravel-customer-io.php'),
+                __DIR__.'/../config/laravel-customer-io.php' => config_path('laravel-customer-io.php'),
             ], 'config');
 
             // Publishing the views.
@@ -50,11 +51,13 @@ class LaravelCustomerIoServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'laravel-customer-io');
+        $this->mergeConfigFrom(__DIR__.'/../config/laravel-customer-io.php', 'laravel-customer-io');
 
-        // Register the main class to use with the facade
-        $this->app->singleton('laravel-customer-io', function () {
-            return new LaravelCustomerIo;
+        $this->app->bind(CustomerIoClient::class, function () {
+            return new CustomerIoClient(
+                config('laravel-customer-io.api_key'),
+                config('laravel-customer-io.site_id')
+            );
         });
     }
 }
