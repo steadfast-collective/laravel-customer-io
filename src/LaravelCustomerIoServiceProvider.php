@@ -29,7 +29,10 @@ class LaravelCustomerIoServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/laravel-customer-io.php', 'laravel-customer-io');
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/laravel-customer-io.php',
+            'laravel-customer-io'
+        );
 
         $this->app->bind(CustomerIoClient::class, function () {
             return new CustomerIoClient(
