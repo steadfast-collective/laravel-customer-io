@@ -14,13 +14,11 @@ class RemoveModelFromCustomerIo implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable;
 
     /**
-     *
      * @var Model
      */
     private $model;
 
     /**
-     *
      * @var CustomerIoClient
      */
     private $customerIo;
