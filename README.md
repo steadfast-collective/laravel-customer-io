@@ -1,7 +1,7 @@
 # Customer io notification channel for Laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/steadfastcollective/laravel-customer-io.svg?style=flat-square)](https://packagist.org/packages/steadfastcollective/laravel-customer-io)
-[![Build Status](https://img.shields.io/travis/steadfastcollective/laravel-customer-io/master.svg?style=flat-square)](https://travis-ci.org/steadfastcollective/laravel-customer-io)
+[![Build Status](https://travis-ci.com/steadfast-collective/laravel-customer-io.svg?branch=master)](https://travis-ci.com/steadfast-collective/laravel-customer-io)
 [![Total Downloads](https://img.shields.io/packagist/dt/steadfastcollective/laravel-customer-io.svg?style=flat-square)](https://packagist.org/packages/steadfastcollective/laravel-customer-io)
 [![StyleCI](https://github.styleci.io/repos/279264881/shield?branch=master)](https://github.styleci.io/repos/279264881?branch=master)
 
