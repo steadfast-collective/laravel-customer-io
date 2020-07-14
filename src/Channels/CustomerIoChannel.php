@@ -29,7 +29,7 @@ class CustomerIoChannel
      */
     public function send($notifiable, Notification $notification): void
     {
-        if (! config('laravel-customer-io.enabled')) {
+        if (! config('services.customer_io.enabled')) {
             return;
         }
 

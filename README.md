@@ -5,7 +5,11 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/steadfastcollective/laravel-customer-io.svg?style=flat-square)](https://packagist.org/packages/steadfastcollective/laravel-customer-io)
 [![StyleCI](https://github.styleci.io/repos/279264881/shield?branch=master)](https://github.styleci.io/repos/279264881?branch=master)
 
-This package makes it easy to send notifications using the customer io API with Laravel.
+This package makes it easy to send notifications using the Customer io API with Laravel.
+
+## About
+
+The Customer io channel makes it possible to send out Laravel notifications as a Customer io event.
 
 ## Installation
 
@@ -15,16 +19,25 @@ You can install the package via composer:
 composer require steadfastcollective/laravel-customer-io
 ```
 
-## Usage
+## Setting up the Customer io service
+You will need to create a Customer io account to use this channel. Within your account, you will find the API key and the site ID. Place them inside your .env file. To load them, add this to your config/services.php file:
 
-Env variables:
 ``` php
-CUSTOMER_IO_ENABLED
-CUSTOMER_IO_SITE_ID
-CUSTOMER_IO_API_KEY
+...
+'customer_io' => [
+    'enabled' => env('CUSTOMER_IO_ENABLED', true),
+    'site_id' => env('CUSTOMER_IO_SITE_ID'),
+    'api_key' => env('CUSTOMER_IO_API_KEY'),
+],
+...
 ```
 
+This will load the Twitter app data from the .env file. Make sure to use the same keys you have used there.
+
+## Usage
+
 Add the trait to your notifiable model:
+
 ``` php
 use Steadfastcollective\LaravelCustomerIo\Traits\SyncsToCustomerIo;
 
@@ -36,7 +49,9 @@ class User extends Authenticatable
 }
 
 ```
+
 Adding customer io support to the notification class:
+
 ``` php
 use Steadfastcollective\LaravelCustomerIo\Channels\CustomerIoChannel;
 ```
@@ -72,7 +87,7 @@ use Steadfastcollective\LaravelCustomerIo\Channels\CustomerIoChannel;
 ### Testing
 
 ``` php
-// TODO
+composer test
 ```
 
 ### Changelog

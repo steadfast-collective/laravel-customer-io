@@ -41,7 +41,7 @@ class RemoveModelFromCustomerIo implements ShouldQueue
      */
     public function handle()
     {
-        if (! config('laravel-customer-io.enabled')) {
+        if (! config('services.customer_io.enabled')) {
             return;
         }
 
