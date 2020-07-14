@@ -2,8 +2,8 @@
 
 namespace Steadfastcollective\LaravelCustomerIo;
 
-use Illuminate\Support\ServiceProvider;
 use Customerio\Client as CustomerIoClient;
+use Illuminate\Support\ServiceProvider;
 
 class LaravelCustomerIoServiceProvider extends ServiceProvider
 {
