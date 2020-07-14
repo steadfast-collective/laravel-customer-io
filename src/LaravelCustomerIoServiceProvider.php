@@ -8,8 +8,8 @@ use Illuminate\Support\ServiceProvider;
 class LaravelCustomerIoServiceProvider extends ServiceProvider
 {
     /**
-    * Bootstrap the application services.
-    */
+     * Bootstrap the application services.
+     */
     public function boot()
     {
         /*
@@ -22,7 +22,7 @@ class LaravelCustomerIoServiceProvider extends ServiceProvider
             ], 'config');
         }
     }
-    
+
     /**
      * Register the application services.
      */
@@ -33,7 +33,7 @@ class LaravelCustomerIoServiceProvider extends ServiceProvider
             __DIR__.'/../config/laravel-customer-io.php',
             'laravel-customer-io'
         );
-        
+
         $this->app->bind(CustomerIoClient::class, function () {
             return new CustomerIoClient(
                 config('laravel-customer-io.api_key'),
