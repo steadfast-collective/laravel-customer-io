@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":324:{a:2:{s:7:"defects";a:2:{s:107:"Steadfastcollective\LaravelCustomerIo\Tests\CustomerIoChannelTest::it_can_send_a_notification_to_notifiable";i:2;s:7:"Warning";i:6;}s:5:"times";a:2:{s:107:"Steadfastcollective\LaravelCustomerIo\Tests\CustomerIoChannelTest::it_can_send_a_notification_to_notifiable";d:0.051;s:7:"Warning";d:0;}}}
