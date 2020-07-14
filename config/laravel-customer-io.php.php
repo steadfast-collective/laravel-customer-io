@@ -23,6 +23,6 @@ return [
     */
 
     'site_id' => env('CUSTOMER_IO_SITE_ID'),
-    
+
     'api_key' => env('CUSTOMER_IO_API_KEY'),
 ];
