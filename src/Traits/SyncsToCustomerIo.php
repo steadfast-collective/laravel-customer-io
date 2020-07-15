@@ -62,15 +62,15 @@ trait SyncsToCustomerIo
      */
     public function getCustomerIoData(): array
     {
-        return array_merge([
-            'app_environment' => App::environment(),
-            'locale'          => App::getLocale(),
-            'timezone'        => config('app.timezone'),
+        return array_merge($this->toCustomerIoArray(), [
             'id'              => $this->customer_io_id,
             'model_class'     => $this->getMorphClass(),
             'model_id'        => $this->id,
+            'app_environment' => App::environment(),
+            'locale'          => App::getLocale(),
+            'timezone'        => config('app.timezone'),
             '_timestamp'      => now()->timestamp,
-        ], $this->toCustomerIoArray());
+        ]);
     }
 
     public function syncToCustomerIo()
