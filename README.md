@@ -28,8 +28,6 @@ CUSTOMER_IO_SITE_ID=[SITE_ID]
 CUSTOMER_IO_API_KEY=[API_KEY]
 ```
 
-This will load the Twitter app data from the .env file. Make sure to use the same keys you have used there.
-
 ## Usage
 
 Add the trait to your notifiable model:
