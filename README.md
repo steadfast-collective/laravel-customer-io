@@ -94,11 +94,11 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ### Security
 
-If you discover any security related issues, please email andre@steadfastcollective.com instead of using the issue tracker.
+If you discover any security related issues, please email dev@steadfastcollective.com instead of using the issue tracker.
 
 ## Credits
 
-- [André Breia](https://github.com/steadfastcollective)
+- [André Breia](https://github.com/andrebreia)
 - [All Contributors](../../contributors)
 
 ## License
