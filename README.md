@@ -9,7 +9,7 @@ This package makes it easy to send notifications using the Customer io API with 
 
 ## About
 
-The Customer io channel makes it possible to send out Laravel notifications as a Customer io event.
+The Customer io channel makes it possible to send out Laravel notifications as a Customer io event. The notifiable model data will also be synced with Customer io and kept up to date.
 
 ## Installation
 
