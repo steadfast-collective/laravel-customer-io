@@ -4,7 +4,7 @@ namespace Steadfastcollective\LaravelCustomerIo;
 
 use Customerio\Client as CustomerIoClient;
 use Illuminate\Support\ServiceProvider;
-use SteadfastCollective\LaravelCustomerIo\Commands\SyncCustomersCommand;
+use Steadfastcollective\LaravelCustomerIo\Commands\SyncCustomersCommand;
 
 class LaravelCustomerIoServiceProvider extends ServiceProvider
 {

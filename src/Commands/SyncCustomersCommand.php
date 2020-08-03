@@ -1,6 +1,6 @@
 <?php
 
-namespace SteadfastCollective\LaravelCustomerIo\Commands;
+namespace Steadfastcollective\LaravelCustomerIo\Commands;
 
 use Illuminate\Console\Command;
 
@@ -21,6 +21,13 @@ class SyncCustomersCommand extends Command
     protected $description = 'Sync customers with customer.io.';
 
     /**
+     * Error messages.
+     *
+     * @var array
+     */
+    protected $errorMessages = [];
+
+    /**
      * Create a new command instance.
      *
      * @return void
@@ -38,8 +45,6 @@ class SyncCustomersCommand extends Command
     public function handle()
     {
         $model = config('laravel-customer-io.model');
-
-        $this->errorMessages = [];
 
         $progressBar = $this->output->createProgressBar((new $model)->count());
 
