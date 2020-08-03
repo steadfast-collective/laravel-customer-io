@@ -4,6 +4,7 @@ namespace Steadfastcollective\LaravelCustomerIo;
 
 use Customerio\Client as CustomerIoClient;
 use Illuminate\Support\ServiceProvider;
+use Steadfastcollective\LaravelCustomerIo\Commands\SyncCustomersCommand;
 
 class LaravelCustomerIoServiceProvider extends ServiceProvider
 {
@@ -40,5 +41,11 @@ class LaravelCustomerIoServiceProvider extends ServiceProvider
                 config('laravel-customer-io.site_id')
             );
         });
+
+        $this->app->bind('command.customer-io:sync-customers', SyncCustomersCommand::class);
+
+        $this->commands([
+            'command.customer-io:sync-customers',
+        ]);
     }
 }
