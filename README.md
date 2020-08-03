@@ -26,6 +26,7 @@ You will need to create a Customer io account to use this channel. Within your a
 CUSTOMER_IO_ENABLED=true
 CUSTOMER_IO_SITE_ID=[SITE_ID]
 CUSTOMER_IO_API_KEY=[API_KEY]
+CUSTOMER_IO_MODEL=App\User
 ```
 
 ## Usage
@@ -76,6 +77,12 @@ use Steadfastcollective\LaravelCustomerIo\Channels\CustomerIoChannel;
         ];
     }
 }
+```
+
+Sync all customers with customer.io with a single command:
+
+``` bash
+php artisan customer-io:sync-customers
 ```
 
 ### Testing
