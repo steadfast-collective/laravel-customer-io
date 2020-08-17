@@ -50,8 +50,8 @@ trait SyncsToCustomerIo
     public function toCustomerIoArray(): array
     {
         return array_replace($this->attributesToArray(), [
-            'created_at' => $this->created_at->timestamp,
-            'updated_at' => $this->updated_at->timestamp,
+            'created_at' => optional($this->created_at)->timestamp,
+            'updated_at' => optional($this->updated_at)->timestamp,
         ]);
     }
 
