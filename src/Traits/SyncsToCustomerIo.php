@@ -75,21 +75,21 @@ trait SyncsToCustomerIo
 
     public function syncToCustomerIo()
     {
-        return SyncModelToCustomerIo::dispatch($this);
+        return SyncModelToCustomerIo::dispatch($this->fresh());
     }
 
     public function syncToCustomerIoNow()
     {
-        return SyncModelToCustomerIo::dispatchNow($this);
+        return SyncModelToCustomerIo::dispatchNow($this->fresh());
     }
 
     public function removeFromCustomerIo()
     {
-        return RemoveModelFromCustomerIo::dispatch($this);
+        return RemoveModelFromCustomerIo::dispatch($this->fresh());
     }
 
     public function removeFromCustomerIoNow()
     {
-        return RemoveModelFromCustomerIo::dispatchNow($this);
+        return RemoveModelFromCustomerIo::dispatchNow($this->fresh());
     }
 }
