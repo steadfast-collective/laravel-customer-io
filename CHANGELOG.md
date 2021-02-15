@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-customer-io` will be documented in this file.
 
+## 1.1.5 - 2021-02-15
+
+* Default model in config file is now `App\Models\User`, instead of `App\Users`
+
 ## 1.1.4 - 2020-11-19
 
 * Fixed issue where you'd sometimes get Serialization of 'Closure' is not allowed when saving model data.
