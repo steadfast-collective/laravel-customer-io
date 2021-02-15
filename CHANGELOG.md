@@ -4,7 +4,7 @@ All notable changes to `laravel-customer-io` will be documented in this file.
 
 ## 1.1.5 - 2021-02-15
 
-* Default model in config file is now `App\Models\User`, instead of `App\Users`
+* Default model in config file is now `App\Models\User`, instead of `App\User`
 
 ## 1.1.4 - 2020-11-19
 
