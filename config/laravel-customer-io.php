@@ -1,8 +1,5 @@
 <?php
 
-/*
- * You can place your custom package configuration in here.
- */
 return [
     /*
     |--------------------------------------------------------------------------
@@ -36,5 +33,5 @@ return [
     |
     */
 
-    'model' => env('CUSTOMER_IO_MODEL', App\User::class),
+    'model' => env('CUSTOMER_IO_MODEL', App\Models\User::class),
 ];
